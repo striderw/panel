@@ -64,6 +64,9 @@ class _state(param.Parameterized):
 
     _comm_manager = _CommManager
 
+    # Locations
+    _locations = {}
+
     # An index of all currently active views
     _views = {}
 
@@ -119,6 +122,10 @@ class _state(param.Parameterized):
     @property
     def session_args(self):
         return self.curdoc.session_context.request.arguments if self.curdoc else {}
+
+    @property
+    def location(self):
+        return self._locations.get(self.curdoc) if self.curdoc else None
 
 
 state = _state()

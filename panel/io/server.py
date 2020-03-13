@@ -37,15 +37,15 @@ def _server_url(url, port):
     else:
         return 'http://%s:%d%s' % (url.split(':')[0], port, "/")
 
-def _eval_panel(panel, server_id, title, doc):
+def _eval_panel(panel, server_id, title, location, doc):
     from ..template import Template
     from ..pane import panel as as_panel
 
     if isinstance(panel, Template):
-        return panel._modify_doc(server_id, title, doc)
+        return panel._modify_doc(server_id, title, doc, location)
     elif isinstance(panel, FunctionType):
         panel = panel()
-    return as_panel(panel)._modify_doc(server_id, title, doc)
+    return as_panel(panel)._modify_doc(server_id, title, doc, location)
     
 #---------------------------------------------------------------------
 # Public API
@@ -95,7 +95,7 @@ def unlocked():
 
 
 def serve(panels, port=0, websocket_origin=None, loop=None, show=True,
-          start=True, title=None, verbose=True, **kwargs):
+          start=True, title=None, verbose=True, location=True, **kwargs):
     """
     Allows serving one or more panel objects on a single server.
     The panels argument should be either a Panel object or a function
@@ -128,15 +128,19 @@ def serve(panels, port=0, websocket_origin=None, loop=None, show=True,
       An HTML title for the application
     verbose: boolean (optional, default=True)
       Whether to print the address and port
+    location : boolean or panel.io.location.Location
+      Whether to create a Location component to observe and
+      set the URL location.
     kwargs: dict
       Additional keyword arguments to pass to Server instance
     """
     return get_server(panels, port, websocket_origin, loop, show, start,
-                      title, verbose, **kwargs)
+                      title, verbose, location, **kwargs)
 
 
 def get_server(panel, port=0, websocket_origin=None, loop=None,
-               show=False, start=False, title=None, verbose=False, **kwargs):
+               show=False, start=False, title=None, verbose=False,
+               location=True, **kwargs):
     """
     Returns a Server instance with this panel attached as the root
     app.
@@ -165,6 +169,9 @@ def get_server(panel, port=0, websocket_origin=None, loop=None,
       An HTML title for the application
     verbose: boolean (optional, default=False)
       Whether to report the address and port
+    location : boolean or panel.io.location.Location
+      Whether to create a Location component to observe and
+      set the URL location.
     kwargs: dict
       Additional keyword arguments to pass to Server instance
 
@@ -178,10 +185,10 @@ def get_server(panel, port=0, websocket_origin=None, loop=None,
     server_id = kwargs.pop('server_id', uuid.uuid4().hex)
     if isinstance(panel, dict):
         apps = {slug if slug.startswith('/') else '/'+slug:
-                partial(_eval_panel, p, server_id, title)
+                partial(_eval_panel, p, server_id, title, location)
                 for slug, p in panel.items()}
     else:
-        apps = {'/': partial(_eval_panel, panel, server_id, title)}
+        apps = {'/': partial(_eval_panel, panel, server_id, title, location)}
 
     opts = dict(kwargs)
     if loop:
