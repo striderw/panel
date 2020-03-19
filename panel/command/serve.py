@@ -116,7 +116,7 @@ class Serve(_BkServe):
             from ..io.tranquilize import build_single_handler_application
             app = build_single_handler_application(files, args)
             tr = WSGIContainer(app)
-            server_kwargs['extra_patterns'] = [(r".*", FallbackHandler, dict(fallback=tr))]
+            server_kwargs['extra_patterns'] = [(r"^/rest/.*", FallbackHandler, dict(fallback=tr))]
 
         server_kwargs['sign_sessions'] = settings.sign_sessions()
         server_kwargs['secret_key'] = settings.secret_key_bytes()
