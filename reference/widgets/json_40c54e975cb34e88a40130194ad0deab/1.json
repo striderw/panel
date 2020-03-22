@@ -1,0 +1,1 @@
+{"header": "{\"msgid\": \"1070\", \"msgtype\": \"PATCH-DOC\"}", "metadata": "{}", "content": "{\"events\": [{\"attr\": \"value\", \"kind\": \"ModelChanged\", \"model\": {\"id\": \"1008\"}, \"new\": \"'Chemistry'\"}, {\"attr\": \"title\", \"kind\": \"ModelChanged\", \"model\": {\"id\": \"1008\"}, \"new\": \"Value\"}], \"references\": []}"}

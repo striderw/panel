@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta charset="utf-8"/>
+<title>Releases — Panel 0.9.3 documentation</title>
+<meta content="High-level dashboarding for python visualization libraries" name="description"/>
+<meta content="Panel contributors" name="author"/>
+<!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="https://ajax.googleapis.com/ajax/libs/webfont/1.6.16/webfont.js"></script>
+<script>
+    WebFont.load({
+      google: {
+        families: ['Source Sans Pro']
+      }
+    });
+  </script>
+<!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/css/main.css" rel="stylesheet"/>
+<link href="_static/nbsite.css" rel="stylesheet"/>
+<link href="_static/site.css" rel="stylesheet"/>
+<!-- Scripts
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script async="" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type="text/javascript">
+</script>
+<script src="_static/js/main.js"></script>
+<script src="_static/nbsite.js"></script>
+<!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="_static/favicon.ico" rel="icon" type="image/png"/>
+<!-- Canonical
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<link href="https://panel.holoviz.org/releases.html" rel="canonical">
+</link></head>
+<body class="">
+<header class="navigation">
+<div class="wrapper">
+<a class="logo" href="index.html">
+<img alt="Logo" src="_static/logo_horizontal.png"/>
+</a>
+<a class="navigation-menu-button" href="javascript:void(0)" id="js-mobile-menu">Menu</a>
+<nav>
+<ul class="navigation-menu show" id="js-navigation-menu">
+<li class="nav-link doc-head"><a href="//discourse.holoviz.org">Discourse</a></li>
+<li class="nav-link doc-head"><a href="//twitter.com/Panel_org">Twitter</a></li>
+<li class="nav-link doc-head"><a href="//github.com/pyviz/panel">Github</a></li>
+<li class="nav-link">
+<div style="display:inline-block;vertical-align: middle;">
+<div class="search-bar">
+<form action="search.html" method="get" role="search">
+<input name="q" placeholder="Search" type="search"/>
+<button type="submit">
+<img alt="Search Icon" src="https://raw.githubusercontent.com/thoughtbot/refills/master/source/images/search-icon-black.png"/>
+</button>
+</form>
+</div>
+</div>
+</li>
+</ul>
+</nav>
+</div>
+</header>
+<div class="second-nav">
+<nav>
+<ul class="navigation-menu show">
+<li class="nav-link doc-head"><a href="getting_started/index.html">Getting started</a></li>
+<li class="nav-link doc-head"><a href="user_guide/index.html">User Guide</a></li>
+<li class="nav-link doc-head"><a href="gallery/index.html">Gallery</a></li>
+<li class="nav-link doc-head"><a href="reference/index.html">Reference Gallery</a></li>
+<li class="nav-link doc-head"><a href="developer_guide/index.html">Developer Guide</a></li>
+<li class="nav-link doc-head"><a href="#">Releases</a></li>
+<li class="nav-link doc-head"><a href="FAQ.html">FAQ</a></li>
+<li class="nav-link doc-head"><a href="about.html">About</a></li>
+</ul>
+</nav>
+</div>
+<!-- MAIN BODY OF DOCS –––––––––––––––––– -->
+<div class="docs section">
+<div id="hacketyhackhack"> <!-- style="width:20%;margin-right: 100px;"> --> <!--style="display: none;"> style="display:none;"> -->
+<div class="toc" style="width:15%; margin-right:20px;">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="index.html">Home</a></li>
+<li class="toctree-l1"><a class="reference internal" href="getting_started/index.html">Getting Started</a></li>
+<li class="toctree-l1"><a class="reference internal" href="user_guide/index.html">User Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="gallery/index.html">Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="reference/index.html">Reference Gallery</a></li>
+<li class="toctree-l1"><a class="reference internal" href="developer_guide/index.html">Developer Guide</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Comparisons.html">Comparisons</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Releases</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Roadmap.html">Road Map</a></li>
+<li class="toctree-l1"><a class="reference internal" href="FAQ.html">FAQ</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://github.com/pyviz/panel">Github source</a></li>
+<li class="toctree-l1"><a class="reference internal" href="about.html">About</a></li>
+</ul>
+</div>
+</div>
+<div class="content"> <!-- style="max-width:80%;margin-left:auto;margin-right: auto;">-->
+<div class="section" id="releases">
+<h1>Releases<a class="headerlink" href="#releases" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="version-0-9-2">
+<h2>Version 0.9.2<a class="headerlink" href="#version-0-9-2" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2020-03-21</p>
+<p>This is a minor release fixing an issue with recent versions of Tornado. It also fixes issue with the packages built on the PyViz conda channel.</p>
+<ul class="simple">
+<li><p>Respect write-locks on synchronous Websocket events (<a class="reference external" href="https://github.com/holoviz/panel/pull/1170">#1170</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="id2">
+<h2>Version 0.9.2<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2020-03-19</p>
+<p>This is a minor release with a number of bug fixes. Many thanks to @ceball, @Guillemdb and @philippjfr for contributing these fixes.</p>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix regression in DiscreteSlider layout (<a class="reference external" href="https://github.com/holoviz/panel/pull/1163">#1163</a>)</p></li>
+<li><p>Fix for saving as PNG which regressed due to changes in bokeh 2.0 (<a class="reference external" href="https://github.com/holoviz/panel/pull/1165">#1165</a>)</p></li>
+<li><p>Allow pn.serve to resolve Template instances returned by a function (<a class="reference external" href="https://github.com/holoviz/panel/pull/1167">#1167</a>)</p></li>
+<li><p>Ensure Template can render empty HoloViews pane (<a class="reference external" href="https://github.com/holoviz/panel/pull/1168">#1168</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-9-1">
+<h2>Version 0.9.1<a class="headerlink" href="#version-0-9-1" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2020-03-13</p>
+<p>This is very minor releases fixing small regressions in the 0.9.0 release:</p>
+<p>Bug fixes</p>
+<ul class="simple">
+<li><p>Fix issue with Button label not being applied (<a class="reference external" href="https://github.com/holoviz/panel/pull/1152">#1152</a>)</p></li>
+<li><p>Pin pyviz_comms 0.7.4 to avoid issues with undefined vars (<a class="reference external" href="https://github.com/holoviz/panel/pull/1153">#1153</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-9-0">
+<h2>Version 0.9.0<a class="headerlink" href="#version-0-9-0" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2020-03-12</p>
+<p>This is a major release primarily for compatibility with the recent Bokeh 2.0 release. Additionally this release has a small number of features and bug fixes:</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Added a MultiChoice widget (<a class="reference external" href="https://github.com/holoviz/panel/pull/1140">#1140</a>)</p></li>
+<li><p>Add FileDownload widget (<a class="reference external" href="https://github.com/holoviz/panel/pull/915">#915</a>, <a class="reference external" href="https://github.com/holoviz/panel/pull/1146">#1146</a>)</p></li>
+<li><p>Add ability to define Slider format option (<a class="reference external" href="https://github.com/holoviz/panel/pull/1142">#1142</a>)</p></li>
+<li><p>Expose <cite>pn.state.cookies</cite> and <cite>pn.state.headers</cite> to allow accessing HTTP headers and requests from inside an app (<a class="reference external" href="https://github.com/holoviz/panel/pull/1143">#1143</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Ensure DiscreteSlider respects layout options (<a class="reference external" href="https://github.com/holoviz/panel/pull/1144">#1144</a>)</p></li>
+</ul>
+<p>Removals:</p>
+<ul class="simple">
+<li><p>Slider no longer support <cite>callback_policy</cite> and <cite>callback_throttle</cite> as they have been replaced by the <cite>value_throttled</cite> property in bokeh</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-8-1">
+<h2>Version 0.8.1<a class="headerlink" href="#version-0-8-1" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2020-03-10</p>
+<p>This release is a minor release with a number of bug fixes and minor enhancements. Many thanks to the community of contributors including @bstadlbauer, @ltalirz @ceball and @gmoutsofor submitting the fixes and the maintainers, including @xavArtley, @jbednar and @philippjfr, for continued development.</p>
+<p>Minor enhancements:</p>
+<ul class="simple">
+<li><p>Added verbose option to display server address (<a class="reference external" href="https://github.com/holoviz/panel/issues/1098">#1098</a>) [@philippjfr]</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fix PNG export due to issue with PhantomJS (<a class="reference external" href="https://github.com/holoviz/panel/issues/1081">#1081</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/1092">#1092</a>) [@bstadlbauer, @philippjfr]</p></li>
+<li><p>Fix for threaded server (<a class="reference external" href="https://github.com/holoviz/panel/issues/1090">#1090</a>) [@xavArtley]</p></li>
+<li><p>Ensure Plotly Pane does not perform rerender on each property change (<a class="reference external" href="https://github.com/holoviz/panel/issues/1109">#1109</a>) [@philippjfr]</p></li>
+<li><p>Fix issues with jslink and other callbacks in Template (<a class="reference external" href="https://github.com/holoviz/panel/issues/1135">#1135</a>) [@philippjfr]</p></li>
+<li><p>Various fixes for VTK pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/1123">#1123</a>) [@xavArtley]</p></li>
+<li><p>Fixes for .show keyword arguments (<a class="reference external" href="https://github.com/holoviz/panel/issues/1073">#1073</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/1107">#1106</a>) [@gmoutso]</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-8-0">
+<h2>Version 0.8.0<a class="headerlink" href="#version-0-8-0" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2020-01-30</p>
+<p>This release focused primarily on solidifying existing functionality, improving performance and closing fixing a number of important bugs. Additionally this release contains a number of exciting new functionality and components. We want to thank the many contributors to this release (a full list is provided at the bottom), particularly <a class="reference external" href="https://github.com/MarcSkovMadsen">Marc Skov Madsen</a> (the author of <a class="reference external" href="http://awesome-panel.org/">awesome-panel.org</a>) and <a class="reference external" href="https://github.com/xavArtley">Xavier Artusi</a>, who has been hard at work at improving VTK support. We also want to thank the remaining contributors including @philippjfr, @ceball, @jbednar, @jlstevens, @Italirz, @mattpap, @Jacob-Barhak, @stefjunod and @kgullikson88. This release introduced only minimal changes in existing APIs and added a small number of new ones demonstrating that Panel is relatively stable and is progressing steadily towards a 1.0 release.</p>
+<p>Major Enhancements:</p>
+<ul class="simple">
+<li><p>Added new <cite>DeckGL</cite> pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/1019">#1019</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/1027">#1027</a>) [@MarcSkovMadsen &amp; @philippjfr]</p></li>
+<li><p>Major improvements to support for JS linking (<a class="reference external" href="https://github.com/holoviz/panel/issues/1007">#1007</a>) [@philippjfr]</p></li>
+<li><p>Huge performance improvements when nesting a lot of components deeply (<a class="reference external" href="https://github.com/holoviz/panel/issues/867">#867</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/888">#888</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/895">#895</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/988">#988</a>) [@philippjfr]</p></li>
+<li><p>Add support for displaying callback errors and print output in the notebook simplifying debugging (<a class="reference external" href="https://github.com/holoviz/panel/issues/977">#977</a>) [@philippjfr]</p></li>
+<li><p>Add support for dynamically populating <cite>Tabs</cite> (<a class="reference external" href="https://github.com/holoviz/panel/issues/995">#995</a>) [@philippjfr]</p></li>
+<li><p>Added <cite>FileSelector</cite> widget to browse the servers file system and select files (<a class="reference external" href="https://github.com/holoviz/panel/issues/909">#909</a>) [@philippjfr]</p></li>
+<li><p>Add <cite>pn.serve</cite> function to serve multiple apps at once on the same serve (<a class="reference external" href="https://github.com/holoviz/panel/issues/963">#963</a>) [@philippjfr]</p></li>
+<li><p>Add a <cite>JSON</cite> pane to display json data in a tree format (<a class="reference external" href="https://github.com/holoviz/panel/issues/953">#953</a>) [@philippjfr]</p></li>
+</ul>
+<p>Minor Enhancements:</p>
+<ul class="simple">
+<li><p>Updated Parameter mappings (<a class="reference external" href="https://github.com/holoviz/panel/issues/999">#999</a>) [@philippjfr]</p></li>
+<li><p>Ensure that closed tabs update <cite>Tabs.objects</cite> (<a class="reference external" href="https://github.com/holoviz/panel/issues/973">#973</a>) [@philippjfr]</p></li>
+<li><p>Fixed HoloViews axis linking across <cite>Template</cite> roots (<a class="reference external" href="https://github.com/holoviz/panel/issues/980">#980</a>) [@philippjfr]</p></li>
+<li><p>Merge FactorRange when linking HoloViews axes (<a class="reference external" href="https://github.com/holoviz/panel/issues/968">#968</a>) [@philippjfr]</p></li>
+<li><p>Expose title and other kwargs on <cite>.show()</cite> (<a class="reference external" href="https://github.com/holoviz/panel/issues/962">#962</a>) [@philippjfr]</p></li>
+<li><p>Let <cite>FileInput</cite> widget set filename (<a href="#id294"><span class="problematic" id="id295">`#956 &lt;https://github.com/holoviz/panel/issues/956.`_</span></a>) [Leopold Talirz]</p></li>
+<li><p>Expose further bokeh CLI commands and added help (<a class="reference external" href="https://github.com/holoviz/panel/issues/951">#951</a>) [@philippjfr]</p></li>
+<li><p>Enable responsive sizing for <cite>Vega</cite>/altair pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/949">#949</a>) [@philippjfr]</p></li>
+<li><p>Added encode parameter to <cite>SVG</cite> pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/913">#913</a>) [@philippjfr]</p></li>
+<li><p>Improve <cite>Markdown</cite> handling including syntax highlighting and indentation (<a class="reference external" href="https://github.com/holoviz/panel/issues/881">#881</a>) [@philippjfr]</p></li>
+<li><p>Add ability to define Template variables (<a class="reference external" href="https://github.com/holoviz/panel/issues/815">#815</a>) [@philippjfr]</p></li>
+<li><p>Allow configuring responsive behavior globally (<a class="reference external" href="https://github.com/holoviz/panel/issues/951">#851</a>) [@xavArtley]</p></li>
+<li><p>Ensure that changes applied in callbacks are reflected on the frontend immediately (<a class="reference external" href="https://github.com/holoviz/panel/issues/857">#857</a>) [@philippjfr]</p></li>
+<li><p>Add ability to add axes coordinates to <cite>VTK</cite> view (<a class="reference external" href="https://github.com/holoviz/panel/issues/817">#817</a>) [@xavArtley]</p></li>
+<li><p>Add config option for <cite>safe_embed</cite> which ensures all state is recorded (<a class="reference external" href="https://github.com/holoviz/panel/issues/1040">#1040</a>) [@philippjfr]</p></li>
+<li><p>Implemented <cite>__signature__</cite> for tab completion (<a class="reference external" href="https://github.com/holoviz/panel/issues/1029">#1029</a>) [@philippjfr]</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Fixed <cite>DataFrame</cite> widget selection parameter (<a class="reference external" href="https://github.com/holoviz/panel/issues/989">#989</a>) [@philippjfr]</p></li>
+<li><p>Fixes for rendering long strings on Windows systems (<a class="reference external" href="https://github.com/holoviz/panel/issues/986">#986</a>)</p></li>
+<li><p>Ensure that panel does not modify user objects (<a class="reference external" href="https://github.com/holoviz/panel/issues/967">#967</a>) [@philippjfr]</p></li>
+<li><p>Fix multi-level expand <cite>Param</cite> subobject (<a class="reference external" href="https://github.com/holoviz/panel/issues/965">#965</a>) [@philippjfr]</p></li>
+<li><p>Ensure <cite>load_notebook</cite> is executed only once (<a class="reference external" href="https://github.com/holoviz/panel/issues/1000">#1000</a>) [@philippjfr]</p></li>
+<li><p>Fixed bug updating <cite>StaticText</cite> on server (<a class="reference external" href="https://github.com/holoviz/panel/issues/964">#964</a>) [@philippjfr]</p></li>
+<li><p>Do not link <cite>HoloViews</cite> axes with different types (<a class="reference external" href="https://github.com/holoviz/panel/issues/937">#937</a>) [@philippjfr]</p></li>
+<li><p>Ensure that integer sliders are actually integers (<a class="reference external" href="https://github.com/holoviz/panel/issues/867">#876</a>) [@philippjfr]</p></li>
+<li><p>Ensure that <cite>GridBox</cite> contents maintain size (<a class="reference external" href="https://github.com/holoviz/panel/issues/971">#971</a>) [@philippjfr]</p></li>
+</ul>
+<p>Compatibility:</p>
+<ul class="simple">
+<li><p>Compatibility for new Param API (<a class="reference external" href="https://github.com/holoviz/panel/issues/992">#992</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/998">#998</a>) [@jlstevens]</p></li>
+<li><p>Changes for compatibility with Vega5 and altair 4 (<a class="reference external" href="https://github.com/holoviz/panel/issues/873">#873</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/889">#889</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/892">#892</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/927">#927</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/933">#933</a>) [@philippjfr]</p></li>
+</ul>
+<p>API Changes:</p>
+<ul class="simple">
+<li><p>The Ace pane has been deprecated in favor of the Ace widget (<a class="reference external" href="https://github.com/holoviz/panel/issues/908">#908</a>) [@kgullikson88]</p></li>
+</ul>
+<p>Docs:</p>
+<ul class="simple">
+<li><p>Updated Django multiple app example and user guide (<a class="reference external" href="https://github.com/holoviz/panel/issues/928">#928</a>) [@stefjunod]</p></li>
+<li><p>Clarify developer installation instructions, and fix up some metadata. (<a class="reference external" href="https://github.com/holoviz/panel/issues/952">#952</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/978">#978</a>) [@ceball &amp; @philippjfr]</p></li>
+<li><p>Added <cite>Param</cite> reference notebook (<a class="reference external" href="https://github.com/holoviz/panel/issues/994">#944</a>) [@MarcSkovMadsen]</p></li>
+<li><p>Added <cite>Divider</cite> reference notebook [@philippjfr]</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-7-0">
+<h2>Version 0.7.0<a class="headerlink" href="#version-0-7-0" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-11-18</p>
+<p>This major release includes significant new functionality along with important bug and documentation fixes, including contributions from @philippjfr (maintainer and lead developer), @xavArtley (VTK support), @jbednar (docs), @DancingQuanta (FileInput), @a-recknagel (Python 3.8 support, misc), @julwin (TextAreaInput, PasswordInput), @rs2 (example notebooks), @xtaje (default values), @Karamya (Audio widget), @ceball, @ahuang11 , @eddienko, @Jacob-Barhak, @jlstevens, @jsignell, @kleavor, @lsetiawan, @mattpap, @maxibor, and @RedBeardCode.</p>
+<p>Major enhancements:</p>
+<ul class="simple">
+<li><p>Added pn.ipywidget() function for using panels and panes as ipwidgets, e.g. in voila (<a class="reference external" href="https://github.com/holoviz/panel/issues/745">#745</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/755">#755</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/771">#771</a>)</p></li>
+<li><p>Greatly expanded and improved Pipeline, which now allows branching graphs (<a class="reference external" href="https://github.com/holoviz/panel/issues/712">#712</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/735">#735</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/737">#737</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/770">#770</a>)</p></li>
+<li><p>Added streaming helper objects, including for the streamz package (<a class="reference external" href="https://github.com/holoviz/panel/issues/767">#767</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/769">#769</a>)</p></li>
+<li><p>Added VTK gallery example and other VTK enhancements (<a class="reference external" href="https://github.com/holoviz/panel/issues/605">#605</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/606">#606</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/715">#715</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/729">#729</a>)</p></li>
+<li><p>Add GridBox layout (<a class="reference external" href="https://github.com/holoviz/panel/issues/608">#608</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/761">#761</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/763">#763</a>)</p></li>
+<li><p>New widgets and panes:</p>
+<ul>
+<li><p>Progress bar (<a class="reference external" href="https://github.com/holoviz/panel/issues/726">#726</a>)</p></li>
+<li><p>Video (<a class="reference external" href="https://github.com/holoviz/panel/issues/696">#696</a>)</p></li>
+<li><p>TextAreaInput widget (<a class="reference external" href="https://github.com/holoviz/panel/issues/658">#658</a>)</p></li>
+<li><p>PasswordInput widget (<a class="reference external" href="https://github.com/holoviz/panel/issues/655">#655</a>)</p></li>
+<li><p>Divider (<a class="reference external" href="https://github.com/holoviz/panel/issues/756">#756</a>),</p></li>
+<li><p>bi-directional jslink (<a class="reference external" href="https://github.com/holoviz/panel/issues/764">#764</a>)</p></li>
+<li><p>interactive DataFrame pane for Pandas, Dask and Streamz dataframes (<a class="reference external" href="https://github.com/holoviz/panel/issues/560">#560</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/751">#751</a>)</p></li>
+</ul>
+</li>
+</ul>
+<p>Other enhancements:</p>
+<ul class="simple">
+<li><p>Make Row/Column scrollable (<a class="reference external" href="https://github.com/holoviz/panel/issues/760">#760</a>)</p></li>
+<li><p>Support file-like objects (not just paths) for images (<a class="reference external" href="https://github.com/holoviz/panel/issues/686">#686</a>)</p></li>
+<li><p>Added isdatetime utility (<a class="reference external" href="https://github.com/holoviz/panel/issues/687">#687</a>)</p></li>
+<li><p>Added repr, kill_all_servers, and cache to pn.state (<a class="reference external" href="https://github.com/holoviz/panel/issues/697">#697</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/776">#776</a>)</p></li>
+<li><p>Added Slider value_throttled parameter (<a class="reference external" href="https://github.com/holoviz/panel/issues/777">#777</a>)</p></li>
+<li><p>Extended existing widgets and panes:</p>
+<ul>
+<li><p>WidgetBox can be disabled programmatically (<a class="reference external" href="https://github.com/holoviz/panel/issues/532">#532</a>)</p></li>
+<li><p>Templates can now render inside a notebook cell (<a class="reference external" href="https://github.com/holoviz/panel/issues/666">#666</a>)</p></li>
+<li><p>Added jscallback method to Viewable objects (<a class="reference external" href="https://github.com/holoviz/panel/issues/665">#665</a>)</p></li>
+<li><p>Added min_characters parameter to AutocompleteInput (<a class="reference external" href="https://github.com/holoviz/panel/issues/721">#721</a>)</p></li>
+<li><p>Added accept parameter to FileInput (<a class="reference external" href="https://github.com/holoviz/panel/issues/602">#602</a>)</p></li>
+<li><p>Added definition_order parameter to CrossSelector (<a class="reference external" href="https://github.com/holoviz/panel/issues/570">#570</a>)</p></li>
+<li><p>Misc widget fixes and improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/703">#703</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/717">#717</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/724">#724</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/762">#762</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/775">#775</a>)</p></li>
+</ul>
+</li>
+</ul>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Removed mutable default args (<a class="reference external" href="https://github.com/holoviz/panel/issues/692">#692</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/694">#694</a>)</p></li>
+<li><p>Improved tests (<a class="reference external" href="https://github.com/holoviz/panel/issues/691">#691</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/699">#699</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/700">#700</a>)</p></li>
+<li><p>Improved fancy layout for scrubber (<a class="reference external" href="https://github.com/holoviz/panel/issues/571">#571</a>)</p></li>
+<li><p>Improved plotly datetime handling (<a class="reference external" href="https://github.com/holoviz/panel/issues/688">#688</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/698">#698</a>)</p></li>
+<li><p>Improved JSON embedding (<a class="reference external" href="https://github.com/holoviz/panel/issues/589">#589</a>)</p></li>
+<li><p>Misc fixes and improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/626">#626</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/631">#631</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/645">#645</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/662">#662</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/681">#681</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/689">#689</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/695">#695</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/723">#723</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/725">#725</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/738">#738</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/743">#743</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/744">#744</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/748">#748</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/749">#749</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/758">#758</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/768">#768</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/772">#772</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/774">#774</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/775">#775</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/779">#779</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/784">#784</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/785">#785</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/787">#787</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/788">#788</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/789">#789</a>)</p></li>
+<li><p>Prepare support for python 3.8 (<a class="reference external" href="https://github.com/holoviz/panel/issues/702">#702</a>)</p></li>
+</ul>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>Expanded and updated FAQ (<a class="reference external" href="https://github.com/holoviz/panel/issues/750">#750</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/765">#765</a>)</p></li>
+<li><p>Add Comparisons section (<a class="reference external" href="https://github.com/holoviz/panel/issues/643">#643</a>)</p></li>
+<li><p>Docs fixes and improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/635">#635</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/670">#670</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/705">#705</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/708">#708</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/709">#709</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/740">#740</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/747">#747</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/752">#752</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-6-2">
+<h2>Version 0.6.2<a class="headerlink" href="#version-0-6-2" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-08-08</p>
+<p>Minor bugfix release patching issues with 0.6.1, primarily in the CI setup. Also removed the not-yet-supported definition_order parameter of pn.CrossSelector.</p>
+</div>
+<div class="section" id="version-0-6-4">
+<h2>Version 0.6.4<a class="headerlink" href="#version-0-6-4" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-10-08</p>
+<p>This release includes a number of important bug fixes along with some minor enhancements, including contributions from @philippjfr, @jsignell, @ahuang11, @jonmmease, and @hoseppan.</p>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Allow pn.depends and pn.interact to accept widgets and update their output when widget values change (<a class="reference external" href="https://github.com/holoviz/panel/issues/639">#639</a>)</p></li>
+<li><p>Add fancy_layout option to HoloViews pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/543">#543</a>)</p></li>
+<li><p>Allow not embedding local files (e.g. images) when exporting to HTML (<a class="reference external" href="https://github.com/holoviz/panel/issues/625">#625</a>)</p></li>
+</ul>
+<p>Bug fixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Restore logging messages that were being suppressed by the distributed package (<a class="reference external" href="https://github.com/holoviz/panel/issues/682">#682</a>)</p></li>
+<li><p>HoloViews fixes and improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/595">#595</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/599">#599</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/601">#601</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/659">#659</a>)</p></li>
+<li><p>Misc other bug fixes and improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/575">#575</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/588">#588</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/649">#649</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/654">#654</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/657">#657</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/660">#660</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/667">#667</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/677">#677</a>)</p></li>
+</ul>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>Added example of opening a URL from jslink (<a class="reference external" href="https://github.com/holoviz/panel/issues/607">#607</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-6-3">
+<h2>Version 0.6.3<a class="headerlink" href="#version-0-6-3" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-09-19</p>
+<p>This release saw a number of important bug and documentation fixes along with some minor enhancements.</p>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Added support for embedding Player widget (<a class="reference external" href="https://github.com/holoviz/panel/issues/584">#584</a>)</p></li>
+<li><p>Add support for linking HoloViews plot axes across panels (<a class="reference external" href="https://github.com/holoviz/panel/issues/586">#586</a>)</p></li>
+<li><p>Allow saving to BytesIO buffer (<a class="reference external" href="https://github.com/holoviz/panel/issues/596">#596</a>)</p></li>
+<li><p>Allow <code class="docutils literal notranslate"><span class="pre">PeriodicCallback.period</span></code> to be updated dynamically (<a class="reference external" href="https://github.com/holoviz/panel/issues/609">#609</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>While hooks are applied to model no events are sent to frontend (<a class="reference external" href="https://github.com/holoviz/panel/issues/585">#585</a>)</p></li>
+<li><p>Various fixes for embedding and rendering (<a class="reference external" href="https://github.com/holoviz/panel/issues/594">#594</a>)</p></li>
+</ul>
+<p>Documentation:</p>
+<ul class="simple">
+<li><p>New example of periodic callbacks (<a class="reference external" href="https://github.com/holoviz/panel/issues/573">#573</a>)</p></li>
+<li><p>Improve <code class="docutils literal notranslate"><span class="pre">panel</span> <span class="pre">serve</span></code> documentation (<a class="reference external" href="https://github.com/holoviz/panel/issues/611">#611</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/614">#614</a>)</p></li>
+<li><p>Add server deployment guide (<a class="reference external" href="https://github.com/holoviz/panel/issues/642">#642</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-6-1">
+<h2>Version 0.6.1<a class="headerlink" href="#version-0-6-1" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-08-01T14:54:20Z</p>
+</div>
+<div class="section" id="version-0-6-0">
+<h2>Version 0.6.0<a class="headerlink" href="#version-0-6-0" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-06-02</p>
+</div>
+<div class="section" id="version-0-5-1">
+<h2>Version 0.5.1<a class="headerlink" href="#version-0-5-1" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-04-11</p>
+<p>Minor release closely following up on 0.5.0 updating version requirements to include the officially released bokeh 1.1.0. This release also includes contributions from @philippjfr (with fixes for pipeline and embed features), @xavArtley (addition of a new widget) and @banesullivan (fixes for VTK support).</p>
+<p>Features:</p>
+<ul class="simple">
+<li><p>Addition of <code class="docutils literal notranslate"><span class="pre">Spinner</span></code> widget for numeric inputs (<a class="reference external" href="https://github.com/holoviz/panel/issues/368">#368</a>)</p></li>
+</ul>
+<p>Bugfixes:</p>
+<ul class="simple">
+<li><p>Skip jslinked widgets when using embed (<a class="reference external" href="https://github.com/holoviz/panel/issues/376">#376</a>)</p></li>
+<li><p>Correctly revert changes to pipelines when stage transitions fail (<a class="reference external" href="https://github.com/holoviz/panel/issues/375">#375</a>)</p></li>
+<li><p>Fixed bug handling scalar arrays in VTK pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/372">#372</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-5-0">
+<h2>Version 0.5.0<a class="headerlink" href="#version-0-5-0" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-04-04</p>
+<p>Major new release, greatly improving usability and capabilities.  Includes contributions from  @philippjfr (docs, better layouts, and many other features),  @xavArtley (VTK support, Ace code editor), @banesullivan (VTK support),  @jbednar and @rtmatx (docs),  @jsignell (docs, infrastructure, interact support), and @jlstevens (labels for parameters).</p>
+<p>Major new features:</p>
+<ul class="simple">
+<li><p>Now uses Bokeh 1.1’s greatly improved layout system, requiring far fewer manual adjustments to spacing (<a class="reference external" href="https://github.com/holoviz/panel/issues/32">#32</a>)</p></li>
+<li><p>Greatly expanded docs, now with galleries (<a class="reference external" href="https://github.com/holoviz/panel/issues/241">#241</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/251">#251</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/265">#265</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/281">#281</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/318">#318</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/332">#332</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/347">#347</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/340">#340</a>)</p></li>
+<li><p>Allow embedding app state, to support static HTML export of panels (<a class="reference external" href="https://github.com/holoviz/panel/issues/250">#250</a>)</p></li>
+<li><p>Added new GridSpec layout type, making it simpler to make grid-based dashboards (<a class="reference external" href="https://github.com/holoviz/panel/issues/338">#338</a>)</p></li>
+<li><p>Added VTK 3D object pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/312">#312</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/337">#337</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/349">#349</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/355">#355</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/363">#363</a>)</p></li>
+<li><p>Added Ace code editor pane (<a class="reference external" href="https://github.com/holoviz/panel/issues/359">#359</a>)</p></li>
+<li><p>Allow defining external JS and CSS resources via config, making it easier to extend Panel (<a class="reference external" href="https://github.com/holoviz/panel/issues/330">#330</a>)</p></li>
+<li><p>Add HTML model capable of executing JS code, allowing more complex embedded items (<a href="#id208"><span class="problematic" id="id209">`</span></a>#32 &lt;<a class="reference external" href="https://github.com/holoviz/panel/issues/32">https://github.com/holoviz/panel/issues/32</a>&gt;`_6)</p></li>
+<li><p>Add a KaTeX and MathJax based LaTeX pane, replacing the previous limited matplotlib/PNG-based support (<a class="reference external" href="https://github.com/holoviz/panel/issues/311">#311</a>)</p></li>
+</ul>
+<p>Other new features:</p>
+<ul class="simple">
+<li><p>Allow passing Parameter instances to Param pane, making it much simpler to work with individual parameters (<a class="reference external" href="https://github.com/holoviz/panel/issues/303">#303</a>)</p></li>
+<li><p>Added parameter for widget alignment (<a class="reference external" href="https://github.com/holoviz/panel/issues/367">#367</a>)</p></li>
+<li><p>Allow specifying initial value when specifying min/max/step for interact (<a class="reference external" href="https://github.com/holoviz/panel/issues/334">#334</a>)</p></li>
+<li><p>Add support for param.Number step (<a class="reference external" href="https://github.com/holoviz/panel/issues/365">#365</a>)</p></li>
+<li><p>Add a PeriodicCallback (<a class="reference external" href="https://github.com/holoviz/panel/issues/348">#348</a>)</p></li>
+<li><p>Expose curdoc and session_context when using serve (<a class="reference external" href="https://github.com/holoviz/panel/issues/336">#336</a>)</p></li>
+<li><p>Add support for saving and loading embedded data from JSON (<a class="reference external" href="https://github.com/holoviz/panel/issues/301">#301</a>)</p></li>
+<li><p>Add support for specifying arbitrary <code class="docutils literal notranslate"><span class="pre">label</span></code> for Parameters (<a class="reference external" href="https://github.com/holoviz/panel/issues/290">#290</a>)</p></li>
+<li><p>Add ColorPicker widget (<a class="reference external" href="https://github.com/holoviz/panel/issues/267">#267</a>)</p></li>
+<li><p>Add support for interact title (<a class="reference external" href="https://github.com/holoviz/panel/issues/266">#266</a>)</p></li>
+</ul>
+<p>Bugfixes and minor improvements:</p>
+<ul class="simple">
+<li><p>Combine HTML and JS in MIME bundle to improve browser compatibility (<a class="reference external" href="https://github.com/holoviz/panel/issues/327">#327</a>)</p></li>
+<li><p>Inlined subobject expand toggle button (<a class="reference external" href="https://github.com/holoviz/panel/issues/329">#329</a>)</p></li>
+<li><p>Use Select widget for ObjectSelector consistently to avoid issues with short lists and numeric lists (<a class="reference external" href="https://github.com/holoviz/panel/issues/362">#362</a>)</p></li>
+<li><p>Various small improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/238">#238</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/245">#245</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/257">#257</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/258">#258</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/259">#259</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/262">#262</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/264">#264</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/276">#276</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/289">#289</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/293">#293</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/307">#307</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/313">#313</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/343">#343</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/331">#331</a>)</p></li>
+<li><p>Various bugfixes (<a class="reference external" href="https://github.com/holoviz/panel/issues/247">#247</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/261">#261</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/263">#263</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/282">#282</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/288">#288</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/291">#291</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/297">#297</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/295">#295</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/305">#305</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/309">#309</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/322">#322</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/328">#328</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/341">#341</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/345">#345</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/354">#354</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/364">#364</a>)</p></li>
+</ul>
+<p>Changes potentially affecting backwards compatibility:</p>
+<ul class="simple">
+<li><p>Refactored io subpackage (<a class="reference external" href="https://github.com/holoviz/panel/issues/315">#315</a>)</p></li>
+<li><p>Moved panes and widgets into subpackage (<a class="reference external" href="https://github.com/holoviz/panel/issues/283">#283</a>)</p></li>
+<li><p>Cleaned up wdiget, deploy, and export APIs (<a class="reference external" href="https://github.com/holoviz/panel/issues/268">#268</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/269">#269</a>)</p></li>
+<li><p>Renamed pane precedence to priority to avoid confusion with Param precedence (<a class="reference external" href="https://github.com/holoviz/panel/issues/235">#235</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-3-1">
+<h2>Version 0.3.1<a class="headerlink" href="#version-0-3-1" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2018-12-05</p>
+<p>Minor release fixing packaging issues.</p>
+</div>
+<div class="section" id="version-0-3-0">
+<h2>Version 0.3.0<a class="headerlink" href="#version-0-3-0" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2018-12-05</p>
+<p>Thanks to @mhc03 for bugfixes.</p>
+<p>New features and enhancements</p>
+<ul class="simple">
+<li><p>New app: Euler’s Method (<a class="reference external" href="https://github.com/holoviz/panel/issues/161">#161</a>)</p></li>
+<li><p>New widgets and panes: Player (<a class="reference external" href="https://github.com/holoviz/panel/issues/110">#110</a>), DiscretePlayer (<a class="reference external" href="https://github.com/holoviz/panel/issues/171">#171</a>), CrossSelector (<a class="reference external" href="https://github.com/holoviz/panel/issues/153">#153</a>)</p></li>
+<li><p>Spinner (spinner.gif)</p></li>
+<li><p>Compositional string reprs (<a class="reference external" href="https://github.com/holoviz/panel/issues/129">#129</a>)</p></li>
+<li><p>Add Param.widgets parameter to override default widgets (<a class="reference external" href="https://github.com/holoviz/panel/issues/172">#172</a>)</p></li>
+<li><p>Pipeline improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/145">#145</a>, etc.)</p></li>
+<li><p>Additional entry points for user commands (<a class="reference external" href="https://github.com/holoviz/panel/issues/176">#176</a>)</p></li>
+<li><p>Support calling from anaconda-project (<a class="reference external" href="https://github.com/holoviz/panel/issues/133">#133</a>)</p></li>
+<li><p>Improved docs</p></li>
+</ul>
+<p>Bugfixes:</p>
+<ul class="simple">
+<li><p>Fix example packaging (<a class="reference external" href="https://github.com/holoviz/panel/issues/177">#177</a>)</p></li>
+<li><p>Various bugfixes and compatibility improvements (<a class="reference external" href="https://github.com/holoviz/panel/issues/126">#126</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/128">#128</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/132">#132</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/136">#136</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/141">#141</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/142">#142</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/150">#150</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/151">#151</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/154">#154</a>, etc.)</p></li>
+</ul>
+<p>Compatibility changes</p>
+<ul class="simple">
+<li><p>Renamed Param expand options (<a class="reference external" href="https://github.com/holoviz/panel/issues/127">#127</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-4-0">
+<h2>Version 0.4.0<a class="headerlink" href="#version-0-4-0" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2019-01-28</p>
+<p>Thanks to @xavArtley for several contributions, and to @lebedov for bugfixes.</p>
+<p>New features:</p>
+<ul class="simple">
+<li><p>Now Python2 compatible (<a class="reference external" href="https://github.com/holoviz/panel/issues/225">#225</a>)</p></li>
+<li><p>Audio player widget (<a class="reference external" href="https://github.com/holoviz/panel/issues/215">#215</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/221">#221</a>)</p></li>
+<li><p>FileInput widget (<a class="reference external" href="https://github.com/holoviz/panel/issues/207">#207</a>)</p></li>
+<li><p>General support for linking Panel objects, even in static exports (<a class="reference external" href="https://github.com/holoviz/panel/issues/199">#199</a>)</p></li>
+<li><p>New user-guide notebooks: Introduction (<a class="reference external" href="https://github.com/holoviz/panel/issues/178">#178</a>), Links (<a class="reference external" href="https://github.com/holoviz/panel/issues/195">#195</a>).</p></li>
+</ul>
+<p>Enhancements:</p>
+<ul class="simple">
+<li><p>Improved Pipeline (<a class="reference external" href="https://github.com/holoviz/panel/issues/220">#220</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/222">#222</a>)</p></li>
+</ul>
+<p>Bug fixes:</p>
+<ul class="simple">
+<li><p>Windows-specific issues (<a class="reference external" href="https://github.com/holoviz/panel/issues/204">#204</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/209">#209</a>, etc.)</p></li>
+<li><p>Various bugfixes (<a class="reference external" href="https://github.com/holoviz/panel/issues/188">#188</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/189">#189</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/190">#190</a>, <a class="reference external" href="https://github.com/holoviz/panel/issues/203">#203</a>)</p></li>
+</ul>
+</div>
+<div class="section" id="version-0-1-3">
+<h2>Version 0.1.3<a class="headerlink" href="#version-0-1-3" title="Permalink to this headline">¶</a></h2>
+<p>Date: 2018-10-23</p>
+</div>
+</div>
+</div>
+</div>
+<!-- END MAIN BODY OF DOCS ––––––––––––– -->
+<!-- Google Analytics -->
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=UA-154795830-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-154795830-2');
+</script>
+<!-- MathJax Config -->
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+</body>
+</html>

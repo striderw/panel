@@ -1,0 +1,1 @@
+{"header": "{\"msgid\": \"1020\", \"msgtype\": \"PATCH-DOC\"}", "metadata": "{}", "content": "{\"events\": [{\"attr\": \"text\", \"kind\": \"ModelChanged\", \"model\": {\"id\": \"1007\"}, \"new\": \"$10.0 * 5.0 = 50.0$\\n$10.0^{5.0} = 100000.0$\"}], \"references\": []}"}
